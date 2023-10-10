@@ -1,4 +1,9 @@
 package com.sarika.mytodo.service;
 
-public class TodoService {
+import com.sarika.mytodo.entity.TodoItem;
+
+import java.util.List;
+
+public interface TodoService {
+    List<TodoItem> getAllTodoItems();
 }
