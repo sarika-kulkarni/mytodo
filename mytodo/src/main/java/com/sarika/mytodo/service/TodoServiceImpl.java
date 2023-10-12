@@ -18,4 +18,20 @@ private TodoRepository todoRepository;
     public List<TodoItem> getAllTodoItems(){
     return todoRepository.findAll();
 }
+
+    @Override
+    public TodoItem createTodoItem(TodoItem todoItem) {
+        return todoRepository.save(todoItem);
+    }
+
+    @Override
+    public void deleteTodoItem(Integer id) {
+     todoRepository.deleteById(id);
+    }
+
+    @Override
+    public TodoItem updateTodoItem(Integer id, TodoItem updatedTodoItem) {
+    updatedTodoItem.setId(id);
+        return todoRepository.save(updatedTodoItem);
+    }
 }
